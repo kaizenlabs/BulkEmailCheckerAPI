@@ -10,65 +10,65 @@ This code is made to interact with Bulk Email Checker's RESTful API (v4) with Go
 
 **Successful Response:**
 
->Status="passed"- A passed response is an address that has passed all tests.\
+>Status="passed"- A passed response is an address that has passed all tests.  
 >--Event="mailbox_exists"- The address provided passed all tests.
 
 **Failed Response:**
 
->Status="failed"- A failed response is an address that has failed 1 or more tests.\
---Event="mailbox_does_not_exist"- The address provided does not exist.\
---Event="mailbox_full"- The mailbox is full.\
---Event="invalid_syntax"- The address provided is not in a valid format.\
---Event="domain_does_not_exist"- The address provided does not have a valid dns.\
---Event="mxserver_does_not_exist"- The address provided does not have a mx server.\
---Event="blacklisted_external"- The address provided was found in your (Mailchimp, Postmark, Sendgrid, etc.) blacklist.\
---Event="blacklisted_internal"- The address provided was found in your internal blacklist containing previously failed addresses.\
---Event="blacklisted_domain"- The domain provided was found in your domain blacklist.\
+>Status="failed"- A failed response is an address that has failed 1 or more tests.  
+--Event="mailbox_does_not_exist"- The address provided does not exist.  
+--Event="mailbox_full"- The mailbox is full.  
+--Event="invalid_syntax"- The address provided is not in a valid format.  
+--Event="domain_does_not_exist"- The address provided does not have a valid dns.  
+--Event="mxserver_does_not_exist"- The address provided does not have a mx server.  
+--Event="blacklisted_external"- The address provided was found in your (Mailchimp, Postmark, Sendgrid, etc.) blacklist.  
+--Event="blacklisted_internal"- The address provided was found in your internal blacklist containing previously failed addresses.  
+--Event="blacklisted_domain"- The domain provided was found in your domain blacklist.  
 
 **Unknown Response:**
 
->Status="unknown"- A unknown response is an address that can not be accurately tested.\
---Event="is_catchall"- Is a Catchall mx server config.
---Event="is_greylisting"- Greylisting is active on this server.
---Event="inconclusive"- Transient error, please try again later.
+>Status="unknown"- A unknown response is an address that can not be accurately tested.  
+--Event="is_catchall"- Is a Catchall mx server config.  
+--Event="is_greylisting"- Greylisting is active on this server.  
+--Event="inconclusive"- Transient error, please try again later.  
 
 **Additional Responses:**
 
->"email"- The address that was validated. \
-"emailSuggested"- The address contained a typo and we have suggested the most likely repaired version. \
-"mailbox"- The mailbox that was validated. \
-"domain"- The domain that was validated. \
-"mxIp"- The ip address of the mail server that was validated. \
-"mxLocation"- The location of the mail server that was validated. \
-"isComplainer"- The address is a frequent complainer. \
-"isDisposable"- The address is a disposable email address. \
-"isFreeService"- The address is a free email account. \
-"isOffensive"- The address contains bad words. \
-"isRoleAccount"- The address is a role account. \
-"validationsRemaining"- The amount of validations remaining in your account balance. \
-"hourlyQuotaRemaining"- The amount of api requests remaining in your account for this hourly segment. \
-"execution"- The amount of time taken to validate this address in ms. \
+>"email"- The address that was validated.  
+"emailSuggested"- The address contained a typo and we have suggested the most likely repaired version.  
+"mailbox"- The mailbox that was validated.  
+"domain"- The domain that was validated.  
+"mxIp"- The ip address of the mail server that was validated.  
+"mxLocation"- The location of the mail server that was validated.  
+"isComplainer"- The address is a frequent complainer.  
+"isDisposable"- The address is a disposable email address.   
+"isFreeService"- The address is a free email account.  
+"isOffensive"- The address contains bad words.  
+"isRoleAccount"- The address is a role account.  
+"validationsRemaining"- The amount of validations remaining in your account balance.   
+"hourlyQuotaRemaining"- The amount of api requests remaining in your account for this hourly segment.    
+"execution"- The amount of time taken to validate this address in ms.  
 
 ### JSON Response Example
 
->{\
-&nbsp;&nbsp;&nbsp;&nbsp;"status": "passed", \
-&nbsp;&nbsp;&nbsp;&nbsp;"event": "mailbox_exists",\
-&nbsp;&nbsp;&nbsp;&nbsp;"details": "The address provided passed all tests.",\
-&nbsp;&nbsp;&nbsp;&nbsp;"email": "userEmail@example.com",\
-&nbsp;&nbsp;&nbsp;&nbsp;"emailSuggested": "",\
-&nbsp;&nbsp;&nbsp;&nbsp;"mailbox": "userEmail",\
-&nbsp;&nbsp;&nbsp;&nbsp;"domain": "example.com",\
-&nbsp;&nbsp;&nbsp;&nbsp;"mxIp": "54.124.145.16",\
-&nbsp;&nbsp;&nbsp;&nbsp;"mxLocation": "US",\
-&nbsp;&nbsp;&nbsp;&nbsp;"isComplainer": false,\
-&nbsp;&nbsp;&nbsp;&nbsp;"isDisposable": false,\
-&nbsp;&nbsp;&nbsp;&nbsp;"isFreeService": true,\
-&nbsp;&nbsp;&nbsp;&nbsp;"isOffensive": false,\
-&nbsp;&nbsp;&nbsp;&nbsp;"isRoleAccount": false,\
-&nbsp;&nbsp;&nbsp;&nbsp;"validationsRemaining": 2120,\
-&nbsp;&nbsp;&nbsp;&nbsp;"hourlyQuotaRemaining": 1499,\
-&nbsp;&nbsp;&nbsp;&nbsp;"execution": 0.097\
+>{  
+"status": "passed",  
+"event": "mailbox_exists",
+"details": "The address provided passed all tests.",  
+"email": "userEmail@example.com",  
+"emailSuggested": "",  
+"mailbox": "userEmail",  
+"domain": "example.com",  
+"mxIp": "54.124.145.16",  
+"mxLocation": "US",  
+"isComplainer": false,  
+"isDisposable": false,  
+"isFreeService": true,  
+"isOffensive": false,  
+"isRoleAccount": false,  
+"validationsRemaining": 2120,  
+"hourlyQuotaRemaining": 1499,  
+"execution": 0.097  
 }
 
 
