@@ -101,7 +101,7 @@ You need to install the Go Lang on your machine. For details on how to do this, 
 
 ### Development
 
-Written by John Anthony Radosta\
+Written by John Anthony Radosta  
 Advanced Sports Technology, Inc.
 
 
